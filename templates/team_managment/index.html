@@ -1,0 +1,234 @@
+
+{% load static %}
+{% block content %}
+<div class="wrapper">
+    <noscript>
+    <div style="position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding: 0 5px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        background: rgba(0, 0, 0, .6);
+        font-size: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 40px;"
+        >Ваш браузер не поддерживает скрипты</div>
+    </noscript>
+
+    <div id="app" class="vue-app">
+        <section class="up">
+            <div class="container">
+                <div class="row up-nav">
+                    <div class="col-12 d-flex flex-wrap flex-md-nowrap">
+                        <a class="pt-3" href="http://ktib-rsue.ru/">
+                            <img src="{% static 'image/rsue-ktib.png' %}" alt="logo" style="width: 228px">
+                        </a>
+                    <div class="w-100 pt-3 ml-0 ml-lg-5 d-flex justify-content-between flex-wrap">
+                        <div class="">
+                            <div class="up-navbar-subtitle">Место проведения</div>
+                            <div class="up-navbar-title">г. Ростов-на-Дону, ул. Большая Садовая 69<br/>Точка Кипения в РГЭУ (РИНХ)</div>
+                        </div>
+                        <div class="">
+                            <div class="up-navbar-subtitle">Формат проведения</div>
+                            <div class="up-navbar-title">Смешанный</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 col-12">
+
+                <div class="up-title">
+                    <img src="{% static 'image/rinhack.png' %}" width="115" height="115">
+                    <p>Хакатон по искусственному интеллекту и разработке программного обеспечения</p>
+                </div>
+                <div class="up-subtitle">
+                    для студентов и молодежи страны!
+                </div>
+                <div class="up-date">
+                    16—18 апреля 2021 г.
+                </div>
+                <a class="up-btn" href="/registration">Зарегистрировать свою команду</a>
+
+                <div style="margin-top: 40px;font-size: 20px;text-decoration: none;"><a href="/doc/pamyatka_dlya_komand.pdf"><img src="{% static 'image/ico_doc.png' %}" class="ico-doc" alt="">Памятка для команд</a></div>
+
+            </div>
+            </div>
+        </section>
+<main class="main">
+<div class="documents">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="main-header">Прямая трансляция подведения итогов и награждение победителей регионального хакатона по искусственному интеллекту</p>
+      </div>
+      <div class="col-12">
+        <div class="documents-wrapper">
+          <div class="row">
+                <div class="col-12">
+                    <div class="documents-wrapper__line d-flex align-items-center justify-content-between" id="documents-row">
+                      <div class="text-center" style="margin:0px auto;display:block;">
+                        <iframe  class="youtube w-100" src="https://www.youtube.com/embed/iAbzou5a_aM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="documents">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="main-header">
+          График проведения мероприятия
+        </p>
+      </div>
+      <div class="col-12">
+        <div class="documents-wrapper">
+          <div class="row">
+                <div class="col-12">
+                    <div class="documents-wrapper__line d-flex align-items-center justify-content-between" id="documents-row">
+                      <div class="d-flex align-items-center">
+                        <p class="documents-date">16 апреля 2021</p>
+                        <p class="documents-title">Обучающий интенсив для участников</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="documents-wrapper__line d-flex align-items-center justify-content-between" id="documents-row">
+                      <div class="d-flex align-items-center">
+                        <p class="documents-date">16 апреля 2021</p>
+                        <p class="documents-title" id="documents-title-even">Выдача кейсов, начало работы</p>
+                      </div>
+                    </div>
+                  <!--</a>-->
+                </div>
+
+                <div class="col-12">
+                    <div class="documents-wrapper__line d-flex align-items-center justify-content-between" id="documents-row">
+                      <div class="d-flex align-items-center">
+                        <p class="documents-date">18 апреля 2021</p>
+                        <p class="documents-title" style="margin-left:40px;">Защита кейсов, подведение итогов, награждение</p>
+                      </div>
+                    </div>
+                  <!--</a>-->
+                </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="documents">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="main-header">
+         Кейсы
+        </p>
+      </div>
+      <div class="col-12">
+        <div class="documents-wrapper">
+          <div class="row">
+            <div class="col-lg-7 col-12">
+                <h4>Искусственный интеллект</h4>
+                <ul>
+                    <li>Разработка WEB-сервиса Task Manager с интеллектуальным модулем распознавания голоса для взаимодействия между сотрудниками организации, работающими, как в CRM-системе, так и вне ее</li>
+                    <li>Разработка интеллектуальной системы управления денежной наличностью в банкоматах</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="stages">
+   <div class="container-fluid text-center d-none d-lg-block">
+      <div class="row">
+        <div class="col-12 p-0">
+          <img src="{% static 'image/none.png' %}" alt="stages-map" class="stages-desktop img-fluid" style="display;">
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="main-header">
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 p-0">
+        <div class="contact-map">
+          <iframe src="http://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.6904289973786!2d39.71591351552213!3d47.222639279161044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3b912d1b908fb%3A0xf448c3f26e7c8247!2z0KDQmNCd0KU!5e0!3m2!1sru!2sru!4v1605473512197!5m2!1sru!2sru" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        </main>
+<footer class="footer">
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row partners" style="margin-top:80px;">
+      <div class="col-lg-2 col-md-3 col-6 partners-item">
+        <a href="https://rsue.ru"><img src="{% static 'image/footer-logo/rsue.png' %}" alt="" ></a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6 partners-item">
+        <a href="https://dodopizza.ru/"><img src="{% static 'image/footer-logo/dodo.png' %}" alt="" ></a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6 partners-item">
+        <a href="https://www.accenture.com/ru-ru"><img src="{% static 'image/footer-logo/accenture.png' %}" alt=""></a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6 partners-item">
+        <a href="https://www.fastreport.ru/ru/"><img src="{% static 'image/footer-logo/fastreports.png' %}" alt="" ></a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6 partners-item">
+        <a href="https://www.centrinvest.ru/ru/"><img src="{% static 'image/footer-logo/ci.png' %}" alt="" ></a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6 partners-item">
+        <a href="https://firecode.ru/"><img src="{% static 'image/footer-logo/firecode.png' %}" alt="" ></a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6 partners-item">
+        <a href="https://telecombg.ru/"><img src="{% static 'image/footer-logo/ttk.png' %}" alt="" ></a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6 partners-item">
+        <a href="https://vk.com/cyberunderground707"><img src="{% static 'image/footer-logo/kp.png' %}" alt="" ></a>
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+  </div>
+
+      <hr/>
+  </body>
+{% endblock %}

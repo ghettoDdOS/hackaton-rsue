@@ -1,0 +1,287 @@
+body {
+  font-family: Golos, Roboto, Arial, Yanone !important;
+}
+.top-logo-place {
+  margin-top: -70px !important;
+}
+.top-logo-place li,
+.top-logo-place2 li {
+  list-style-type: none;
+}
+.top-logo-place-title,
+.top-logo-place-title2 {
+  font-family: Golos, Roboto, Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: #1b3477;
+  opacity: 0.5;
+}
+.top-logo-place-address,
+.top-logo-place-address2 {
+  font-family: Golos, Roboto, Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1b3477;
+  margin-top: 30px;
+}
+.top-logo-place-title {
+  position: absolute;
+  width: 139px;
+  height: 18px;
+}
+.top-logo-place-address {
+  position: absolute;
+  width: 380px;
+  height: 22px;
+}
+.top-logo-place-address2 {
+  margin-top: 17px;
+}
+.ico-doc {
+  margin-top: -3px;
+  margin-right: 6px;
+  width: 24px;
+}
+
+form label {
+  font-family: Golos, Roboto, Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+
+  color: #1b3477;
+}
+
+#button-submit {
+  font-family: Golos, Roboto, Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  display: inline-block;
+  font-weight: 700;
+  color: #fff;
+  background: #2ba6ff;
+  border-radius: 11px;
+  padding: 15px 25px;
+  text-decoration: none;
+}
+
+#download {
+  font-family: Golos, Roboto, Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  display: inline-block;
+  font-weight: 700;
+  color: #fff;
+  background: #2ba6ff;
+  border-radius: 11px;
+  padding: 15px 25px;
+  text-decoration: none;
+}
+
+#results,
+#results tr,
+#results td {
+  border: solid 1px #cdd3f0;
+  padding: 10px 14px;
+}
+#results {
+  width: 800px;
+}
+
+#results td {
+  font-family: Golos, Roboto, Arial;
+  font-size: 16px;
+  color: #31498b;
+}
+#results tr:nth-child(1) {
+  font-weight: bold;
+  background: #fcfcff;
+  color: #31498b !important;
+  text-decoration: none !important;
+}
+#results tr:nth-child(1) td a {
+  color: #31498b !important;
+  text-decoration: none !important;
+  cursor: default !important;
+}
+
+.form-subheader {
+  font-family: Golos, Roboto, Arial;
+  font-size: 16px;
+  color: #31498b;
+  font-weight: bold;
+  margin-left: -15px;
+  margin-top: 20px;
+}
+input,
+select,
+option,
+textarea {
+  font-family: Golos, Roboto, Arial !important;
+  font-size: 15px !important;
+  color: #31498b !important;
+}
+#documents-title-even {
+  margin-left: 60px;
+}
+
+.main-header {
+  padding-top: 50px;
+}
+
+.up-nav {
+  width: 100%;
+}
+.up-navbar-subtitle {
+  font-size: 15px;
+  color: #1b3477;
+  opacity: 0.5;
+  margin-bottom: 10px;
+}
+
+.up-navbar-title {
+  font-size: 18px;
+  line-height: 22px;
+  color: #1b3477;
+  line-height: 30px;
+}
+
+.up-nav {
+  padding: 30px 0;
+}
+
+.up-title {
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 149.4%;
+  color: #31498b;
+  /*padding-top: 100px;*/
+  padding-bottom: 30px;
+}
+
+.up-subtitle {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 149.4%;
+  color: #31498b;
+}
+
+.up-date {
+  font-weight: normal;
+  font-size: 34px;
+  line-height: 41px;
+  color: #003cb0;
+  padding: 60px 0;
+}
+
+.up-btn {
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 29px;
+  color: #ffffff;
+  background: #5b84ed;
+  border-radius: 7px;
+  font-weight: bold;
+}
+.up-btn:hover {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.up {
+  background-image: url(../image/top-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  padding-bottom: 200px;
+}
+.documents-wrapper {
+  width: auto !important;
+}
+
+.youtube {
+  width: 720px;
+  height: 460px;
+}
+.jumbotron {
+  background: #532f8c;
+  color: white;
+  padding-bottom: 80px;
+}
+.jumbotron .btn-primary {
+  background: #845ac7;
+  border-color: #845ac7;
+}
+.jumbotron .btn-primary:hover {
+  background: #7646c1;
+}
+.jumbotron p {
+  color: #d9ccee;
+  max-width: 75%;
+  margin: 1em auto 2em;
+}
+.jumbotron h1 {
+  font-size: 40px;
+}
+.navbar + .jumbotron {
+  margin-top: -20px;
+}
+.jumbotron .lang-logo {
+  display: block;
+  background: #b01302;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border: 2px solid white;
+}
+.jumbotron .lang-logo img {
+  max-width: 100%;
+}
+
+@media (max-width: 575.98px) {
+  .up {
+    background: none;
+    padding-bottom: 100px;
+  }
+  .up-title {
+    padding-top: 50px;
+    font-size: 25px;
+  }
+  .up-btn {
+    display: inline-block;
+    padding: 20px 30px;
+    font-size: 20px;
+  }
+  .youtube {
+    width: 460px;
+    height: 320px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .up {
+    background: none;
+    padding-bottom: 100px;
+  }
+  .youtube {
+    width: 460px;
+    height: 320px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .up {
+    background: none;
+    padding-bottom: 100px;
+  }
+}
