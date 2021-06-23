@@ -201,13 +201,13 @@
 {% if sponsors %}
 <footer class="footer">
   <div class="container">
-  {% for sponsor in sponsors %}
     <div class="row partners" style="margin-top:80px;">
+    {% for sponsor in sponsors %}
       <div class="col-lg-2 col-md-3 col-6 partners-item">
         <a href="{{sponsor.link}}"><img src="{{sponsor.logo.url}}" alt="{{sponsor.name}}" ></a>
       </div>
+      {% endfor %}
     </div>
-  {% endfor %}
   </div>
 </footer>
 {% endif %}
