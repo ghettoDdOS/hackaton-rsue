@@ -1,5 +1,9 @@
 
-{% load static %}
+{% load static managment %}
+{% document_cards as docs %}
+{% dates_cards as dates %}
+{% case_cards as cases %}
+{% sponsors_cards as sponsors %}
 {% block content %}
 <div class="wrapper">
     <noscript>
@@ -36,33 +40,48 @@
                             <div class="up-navbar-title">г. Ростов-на-Дону, ул. Большая Садовая 69<br/>Точка Кипения в РГЭУ (РИНХ)</div>
                         </div>
                         <div class="">
+                          {% if settings.0.format_type %}
                             <div class="up-navbar-subtitle">Формат проведения</div>
-                            <div class="up-navbar-title">Смешанный</div>
+                            <div class="up-navbar-title">{{settings.0.format_type}}</div>
+                          {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-7 col-12">
-
-                <div class="up-title">
-                    <img src="{% static 'image/rinhack.png' %}" width="115" height="115">
-                    <p>Хакатон по искусственному интеллекту и разработке программного обеспечения</p>
-                </div>
+                {% if settings.0.title %}
+                  <div class="up-title">
+                      <img src="{% static 'image/rinhack.png' %}" width="115" height="115">
+                      <p>{{settings.0.title}}</p>
+                  </div>
+                {% endif %}
+                {% if settings.0.sub_title %}
                 <div class="up-subtitle">
-                    для студентов и молодежи страны!
+                    {{settings.0.sub_title}}
                 </div>
-                <div class="up-date">
-                    16—18 апреля 2021 г.
-                </div>
-                <a class="up-btn" href="/registration">Зарегистрировать свою команду</a>
-
-                <div style="margin-top: 40px;font-size: 20px;text-decoration: none;"><a href="/doc/pamyatka_dlya_komand.pdf"><img src="{% static 'image/ico_doc.png' %}" class="ico-doc" alt="">Памятка для команд</a></div>
-
+                {% endif %}
+                {% if settings.0.date %}
+                  <div class="up-date">
+                      {{settings.0.date}}
+                  </div>
+                {% endif %}
+                {% if settings.0.registration %}
+                  <a class="my-2 up-btn" href="/registration">Вступить в команду</a>
+                  <a class="my-2 up-btn" href="/registration-team">Зарегистрировать свою команду</a>
+                {% else %}
+                  <div class="up-subtitle">Ренистрация закрыта.</div>
+                {% endif %}
+                {% if docs %}
+                  {% for doc in docs %}
+                    <div style="margin-top: 40px;font-size: 20px;text-decoration: none;"><a href="{{doc.file.url}}"><img src="{% static 'image/ico_doc.png' %}" class="ico-doc" alt="">{{doc.name}}</a></div>
+                  {% endfor %}
+                {% endif %}
             </div>
             </div>
         </section>
 <main class="main">
+{% if settings.0.video_link %}
 <div class="documents">
   <div class="container">
     <div class="row">
@@ -74,8 +93,8 @@
           <div class="row">
                 <div class="col-12">
                     <div class="documents-wrapper__line d-flex align-items-center justify-content-between" id="documents-row">
-                      <div class="text-center" style="margin:0px auto;display:block;">
-                        <iframe  class="youtube w-100" src="https://www.youtube.com/embed/iAbzou5a_aM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <div class="text-center w-100" style="margin:0px auto;display:block;">
+                        <iframe  class="youtube w-100" src="{{settings.0.video_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       </div>
                     </div>
                 </div>
@@ -85,6 +104,8 @@
     </div>
   </div>
 </div>
+{% endif %}
+{% if dates %}
 <div class="documents">
   <div class="container">
     <div class="row">
@@ -96,44 +117,25 @@
       <div class="col-12">
         <div class="documents-wrapper">
           <div class="row">
+          {% for one_date in dates %}
                 <div class="col-12">
                     <div class="documents-wrapper__line d-flex align-items-center justify-content-between" id="documents-row">
                       <div class="d-flex align-items-center">
-                        <p class="documents-date">16 апреля 2021</p>
-                        <p class="documents-title">Обучающий интенсив для участников</p>
+                        <p class="documents-date">{{one_date.date}}</p>
+                        <p class="documents-title">{{one_date}}</p>
                       </div>
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="documents-wrapper__line d-flex align-items-center justify-content-between" id="documents-row">
-                      <div class="d-flex align-items-center">
-                        <p class="documents-date">16 апреля 2021</p>
-                        <p class="documents-title" id="documents-title-even">Выдача кейсов, начало работы</p>
-                      </div>
-                    </div>
-                  <!--</a>-->
+            {% endfor %}
                 </div>
-
-                <div class="col-12">
-                    <div class="documents-wrapper__line d-flex align-items-center justify-content-between" id="documents-row">
-                      <div class="d-flex align-items-center">
-                        <p class="documents-date">18 апреля 2021</p>
-                        <p class="documents-title" style="margin-left:40px;">Защита кейсов, подведение итогов, награждение</p>
-                      </div>
-                    </div>
-                  <!--</a>-->
-                </div>
-
-
-
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
+{% endif %}
+{% if cases %}
 <div class="documents">
   <div class="container">
     <div class="row">
@@ -142,23 +144,24 @@
          Кейсы
         </p>
       </div>
+      {% for case in cases %}
       <div class="col-12">
         <div class="documents-wrapper">
           <div class="row">
             <div class="col-lg-7 col-12">
-                <h4>Искусственный интеллект</h4>
+                <h4>{{case}}</h4>
                 <ul>
-                    <li>Разработка WEB-сервиса Task Manager с интеллектуальным модулем распознавания голоса для взаимодействия между сотрудниками организации, работающими, как в CRM-системе, так и вне ее</li>
-                    <li>Разработка интеллектуальной системы управления денежной наличностью в банкоматах</li>
+                    {{case.tasks}}
                 </ul>
             </div>
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
   </div>
 </div>
-
+{% endif %}
 
 <section class="stages">
    <div class="container-fluid text-center d-none d-lg-block">
@@ -195,40 +198,21 @@
 <footer class="footer">
 
 
-
+{% if sponsors %}
 <footer class="footer">
   <div class="container">
+  {% for sponsor in sponsors %}
     <div class="row partners" style="margin-top:80px;">
       <div class="col-lg-2 col-md-3 col-6 partners-item">
-        <a href="https://rsue.ru"><img src="{% static 'image/footer-logo/rsue.png' %}" alt="" ></a>
-      </div>
-      <div class="col-lg-2 col-md-3 col-6 partners-item">
-        <a href="https://dodopizza.ru/"><img src="{% static 'image/footer-logo/dodo.png' %}" alt="" ></a>
-      </div>
-      <div class="col-lg-2 col-md-3 col-6 partners-item">
-        <a href="https://www.accenture.com/ru-ru"><img src="{% static 'image/footer-logo/accenture.png' %}" alt=""></a>
-      </div>
-      <div class="col-lg-2 col-md-3 col-6 partners-item">
-        <a href="https://www.fastreport.ru/ru/"><img src="{% static 'image/footer-logo/fastreports.png' %}" alt="" ></a>
-      </div>
-      <div class="col-lg-2 col-md-3 col-6 partners-item">
-        <a href="https://www.centrinvest.ru/ru/"><img src="{% static 'image/footer-logo/ci.png' %}" alt="" ></a>
-      </div>
-      <div class="col-lg-2 col-md-3 col-6 partners-item">
-        <a href="https://firecode.ru/"><img src="{% static 'image/footer-logo/firecode.png' %}" alt="" ></a>
-      </div>
-      <div class="col-lg-2 col-md-3 col-6 partners-item">
-        <a href="https://telecombg.ru/"><img src="{% static 'image/footer-logo/ttk.png' %}" alt="" ></a>
-      </div>
-      <div class="col-lg-2 col-md-3 col-6 partners-item">
-        <a href="https://vk.com/cyberunderground707"><img src="{% static 'image/footer-logo/kp.png' %}" alt="" ></a>
+        <a href="{{sponsor.link}}"><img src="{{sponsor.logo.url}}" alt="{{sponsor.name}}" ></a>
       </div>
     </div>
+  {% endfor %}
   </div>
 </footer>
+{% endif %}
     </div>
   </div>
-
       <hr/>
   </body>
 {% endblock %}

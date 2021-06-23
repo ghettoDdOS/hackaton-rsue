@@ -15,7 +15,11 @@ class Directions(models.Model):
 class Teams(models.Model):
     team_name = models.CharField(max_length=100, verbose_name="Название")
     organization = models.CharField(max_length=100, verbose_name="Организация")
-    direction = models.ForeignKey(Directions, on_delete=models.CASCADE)
+    direction = models.ForeignKey(
+        Directions,
+        on_delete=models.CASCADE,
+        verbose_name="Направление",
+    )
 
     def __str__(self):
         return self.team_name
@@ -31,7 +35,11 @@ class Participants(models.Model):
     patronymic = models.CharField(max_length=30, verbose_name="Отчество")
     email = models.EmailField(verbose_name="E-mail")
     phone = models.CharField(max_length=12, verbose_name="Номер телефона")
-    team = models.ForeignKey(Teams, on_delete=models.CASCADE)
+    team = models.ForeignKey(
+        Teams,
+        on_delete=models.CASCADE,
+        verbose_name="Команда",
+    )
 
     def __str__(self):
         return "%s %s" % (

@@ -206,7 +206,9 @@ textarea {
 .documents-wrapper {
   width: auto !important;
 }
-
+.documents {
+  word-break: break-word;
+}
 .youtube {
   width: 720px;
   height: 460px;

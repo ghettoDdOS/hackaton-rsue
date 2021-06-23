@@ -17,7 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from team_managment import views as team_managment_views
 
+admin.site.site_header = "RINH HACK Admin"
+admin.site.site_title = "RINH HACK Admin"
+admin.site.index_title = "RINH HACK Admin"
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", team_managment_views.index),
+    path("registration", team_managment_views.register),
+    path("registration-team", team_managment_views.register_team),
 ]
