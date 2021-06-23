@@ -31,8 +31,6 @@ class ParticipantsForm(forms.ModelForm):
                 attrs={
                     "class": "form-control w-50",
                     "placeholder": "+7 (___) ___-__-__",
-                    "pattern": "+7([0-9]{3})[0-9]{3}-[0-9]{2}-[0-9]{2}",
-                    "id": "phone1",
                     "type": "tel",
                 },
             ),
